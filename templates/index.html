@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tải Video YouTube</title>
+</head>
+<body>
+    <h1>Tải Video YouTube</h1>
+    <form method="post">
+        <label>Nhập URL Video:</label>
+        <input type="text" name="url" required><br>
+        
+        <label>Thời gian bắt đầu (hh:mm:ss):</label>
+        <input type="text" name="start_time"><br>
+        
+        <label>Thời gian kết thúc (hh:mm:ss):</label>
+        <input type="text" name="end_time"><br>
+        
+        <button type="submit">Tải xuống</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if download_url %}
+        <p><a href="{{ url_for('download_file', filename=download_url) }}">Tải Video Đã Cắt</a></p>
+    {% endif %}
+</body>
+</html>
