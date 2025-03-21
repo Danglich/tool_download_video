@@ -3,31 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tải Video YouTube</title>
+    <title>Tải Video YouTube Nhanh Chóng - Download Không Giới Hạn</title>
+    
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="Công cụ tải video YouTube miễn phí. Hỗ trợ cắt video theo thời gian bắt đầu và kết thúc mong muốn. Tải ngay!">
+    <meta name="keywords" content="tải video youtube, download youtube video, cắt video youtube, tải video mp4">
+    <meta name="author" content="IVSR">
+
+    <!-- Open Graph for better sharing -->
+    <meta property="og:title" content="Tải Video YouTube Nhanh Chóng - Download Không Giới Hạn">
+    <meta property="og:description" content="Công cụ tải video YouTube miễn phí. Hỗ trợ cắt video theo thời gian bắt đầu và kết thúc mong muốn. Tải ngay!">
+    <meta property="og:image" content="https://drive.inet.vn/uploads/trongpd@inet.vn/file-1637853450699_download-youtube-video.jpg">
+    <meta property="og:url" content="https://drive.inet.vn/uploads/trongpd@inet.vn/file-1637853450699_download-youtube-video.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9024404529093157"
      crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px;
+            background: #fff;
+            padding: 20px;
+            margin: 50px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #d63031;
+            margin-bottom: 10px;
+        }
+        p.description {
+            font-size: 16px;
+            color: #555;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .guide {
+            text-align: left;
+            margin-top: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #0984e3;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #74b9ff;
+        }
+        .download-link {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Tải Video YouTube</h1>
-    <form method="post">
-        <label>Nhập URL Video:</label>
-        <input type="text" name="url" required><br>
-        
-        <label>Thời gian bắt đầu (hh:mm:ss):</label>
-        <input type="text" name="start_time"><br>
-        
-        <label>Thời gian kết thúc (hh:mm:ss):</label>
-        <input type="text" name="end_time"><br>
-        
-        <button type="submit">Tải xuống</button>
-    </form>
 
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
+    <div class="container">
+        <h1>Tải Video YouTube Miễn Phí</h1>
+        <p class="description">Tải video từ YouTube nhanh chóng, đơn giản và miễn phí. Hỗ trợ cắt video theo thời gian bắt đầu và kết thúc mong muốn.</p>
 
-    {% if download_url %}
-        <p><a href="{{ url_for('download_file', filename=download_url) }}">Tải Video Đã Cắt</a></p>
-    {% endif %}
+        <img src="https://drive.inet.vn/uploads/trongpd@inet.vn/file-1637853450699_download-youtube-video.jpg" alt="Tải video YouTube nhanh chóng">
+
+        <h2>📌 Giới thiệu</h2>
+        <p class="guide">
+            Với công cụ tải video YouTube của chúng tôi, bạn có thể dễ dàng lưu lại các video yêu thích mà không cần cài đặt phần mềm.  
+            Tính năng nổi bật:
+        </p>
+        <ul class="guide">
+            <li>🎥 **Tải video YouTube nhanh chóng**, chỉ cần dán link.</li>
+            <li>⏳ **Cắt video theo thời gian tùy chọn**.</li>
+            <li>🔄 **Hỗ trợ nhiều định dạng tải xuống**.</li>
+            <li>🚀 **Miễn phí và không cần đăng ký**.</li>
+        </ul>
+
+        <form method="post">
+            <label for="url">Nhập URL Video:</label>
+            <input type="text" id="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required>
+
+            <label for="start_time">Thời gian bắt đầu (hh:mm:ss):</label>
+            <input type="text" id="start_time" name="start_time" placeholder="00:01:30">
+
+            <label for="end_time">Thời gian kết thúc (hh:mm:ss):</label>
+            <input type="text" id="end_time" name="end_time" placeholder="00:03:45">
+
+            <button type="submit">Tải xuống</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if download_url %}
+            <p class="download-link">
+                <a href="{{ url_for('download_file', filename=download_url) }}" style="color: #0984e3; text-decoration: none; font-weight: bold;">
+                    📥 Tải Video Đã Cắt
+                </a>
+            </p>
+        {% endif %}
+
+        
+        <h2>🛠️ Hướng dẫn sử dụng</h2>
+        <p class="guide">
+            Chỉ với **3 bước đơn giản**, bạn có thể tải video ngay lập tức:
+        </p>
+        <ol class="guide">
+            <li>📌 **Bước 1**: Nhập đường link video YouTube.</li>
+            <li>⏳ **Bước 2**: (Tùy chọn) Nhập thời gian bắt đầu và kết thúc nếu muốn cắt video.</li>
+            <li>📥 **Bước 3**: Nhấn nút "Tải xuống" và chờ xử lý.</li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 IVSR - Công cụ tải video YouTube miễn phí</p>
+    </div>
+
 </body>
 </html>
