@@ -60,5 +60,14 @@ def index():
 def download_file(filename):
     return send_file(filename, as_attachment=True)
 
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
